@@ -3,10 +3,10 @@ import { AppModule } from './app.module';
 import { ValidationPipe } from '@nestjs/common';
 import { SwaggerModule } from '@nestjs/swagger';
 import { swaggerConfig } from './config/swagger';
-import * as cors from 'cors';
 import { ErrorHandle } from './filter/custom.exetepsion.filter';
 import mongoose from 'mongoose';
 import * as dotenv from 'dotenv';
+import * as cors from 'cors';
 dotenv.config();
 
 async function bootstrap() {
