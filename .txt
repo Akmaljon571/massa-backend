@@ -1,0 +1,65 @@
+// pagination boladi
+
+table category {
+  title String
+}
+
+table product {
+  title String
+  price number
+  chegirma String
+  oldPrice Number
+}
+
+table pro {
+  product_id String
+  image String
+  color String
+  razmer Number
+}
+
+table user {
+  name String
+  password string unique
+  gender boolean
+  age Number
+}
+
+table order {
+  product_id string
+  user_id string
+  count number
+}
+
+table like {
+  product_id string
+  user_id string
+}
+
+Post, Put, Delete hammasi bot orqali boladi
+
+category {
+  find()
+}
+
+product {
+  find() + like_soni query nechta va pagination orqali
+  findOne() + like_soni category ga tegishliklar query nechta va pagination orqali
+}
+
+order {
+  findOne() user boyicha
+}
+
+user {
+  findOne() tokenga tegishli
+}
+
+auth {
+  login: {
+    name, password + token qaytadi
+  }
+  registr: {
+    name, password, gender, age + token qaytadi
+  }
+}
