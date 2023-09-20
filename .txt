@@ -41,19 +41,28 @@ Post, Put, Delete hammasi bot orqali boladi
 
 category {
   find()
-}
+} 
 
 product {
   find() + like_soni query nechta va pagination orqali
   findOne() + like_soni category ga tegishliklar query nechta va pagination orqali
-}
+  user like bosgan bolsa activeLike: true
+  user orderga solgan bolsa activeOrder: true
+  chiqishi kere
+
+  Frontend
+    productni aylanib chiqib uni ichidagi like userni like package da bolsa agar true bolmasa false qilib qoyman
+    va product ga registr siz like bosa local ga saqlab registratsiyadan otishi bilan hammasini backendga jonatib active qilib qoyaman
+    agar ormasa lakal ochib keturadi. otishi bilan hammasi bazaga yoziladi va hammasi active lashib qolaveradi
+} 
 
 order {
   findOne() user boyicha
-}
+} 
 
 user {
   findOne() tokenga tegishli
+  update
 }
 
 auth {

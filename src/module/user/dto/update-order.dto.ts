@@ -4,13 +4,13 @@ import {
   MaxLength,
   MinLength,
   IsBoolean,
-  IsNotEmpty,
+  IsOptional,
   IsNumber,
 } from 'class-validator';
 
-export class RegistAuthDto {
+export class UpdateUserDto {
   @IsString()
-  @IsNotEmpty()
+  @IsOptional()
   @ApiProperty({
     title: 'name',
     type: String,
@@ -21,7 +21,7 @@ export class RegistAuthDto {
   @IsString()
   @MinLength(5)
   @MaxLength(8)
-  @IsNotEmpty()
+  @IsOptional()
   @ApiProperty({
     title: 'password',
     type: String,
@@ -30,7 +30,7 @@ export class RegistAuthDto {
   password: string;
 
   @IsBoolean()
-  @IsNotEmpty()
+  @IsOptional()
   @ApiProperty({
     title: 'gender',
     type: Boolean,
@@ -39,7 +39,7 @@ export class RegistAuthDto {
   gender: boolean;
 
   @IsNumber()
-  @IsNotEmpty()
+  @IsOptional()
   @ApiProperty({
     title: 'age',
     type: Number,
