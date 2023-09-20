@@ -10,6 +10,7 @@ table product {
   chegirma String
   oldPrice Number
 }
+ 
 
 table pro {
   product_id String

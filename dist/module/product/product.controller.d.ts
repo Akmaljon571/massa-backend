@@ -29,22 +29,22 @@ export declare class ProductController {
     constructor(productService: ProductService);
     findAll(son: string, page: string): Promise<(import("mongoose").Document<unknown, {}, {
         order: import("mongoose").Types.ObjectId[];
-        pro: import("mongoose").Types.ObjectId[];
         like: import("mongoose").Types.ObjectId[];
+        pro: import("mongoose").Types.ObjectId[];
         title?: string;
+        category?: import("mongoose").Types.ObjectId;
         price?: number;
         chegirma?: string;
         oldPrice?: number;
-        category?: import("mongoose").Types.ObjectId;
     }> & {
         order: import("mongoose").Types.ObjectId[];
-        pro: import("mongoose").Types.ObjectId[];
         like: import("mongoose").Types.ObjectId[];
+        pro: import("mongoose").Types.ObjectId[];
         title?: string;
+        category?: import("mongoose").Types.ObjectId;
         price?: number;
         chegirma?: string;
         oldPrice?: number;
-        category?: import("mongoose").Types.ObjectId;
     } & {
         _id: import("mongoose").Types.ObjectId;
     })[]>;

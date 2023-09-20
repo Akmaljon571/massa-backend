@@ -16,16 +16,16 @@ exports.default = (0, mongoose_1.model)('product', new mongoose_1.Schema({
             ref: 'order',
         },
     ],
-    pro: [
-        {
-            type: mongoose_1.Schema.Types.ObjectId,
-            ref: 'pro',
-        },
-    ],
     like: [
         {
             type: mongoose_1.Schema.Types.ObjectId,
             ref: 'like',
+        },
+    ],
+    pro: [
+        {
+            type: mongoose_1.Schema.Types.ObjectId,
+            ref: 'pro',
         },
     ],
 }));

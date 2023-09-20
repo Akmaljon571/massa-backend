@@ -24,37 +24,37 @@
 /// <reference types="mongoose/types/inferschematype" />
 import { Schema } from 'mongoose';
 declare const _default: import("mongoose").Model<{
+    product?: import("mongoose").Types.ObjectId;
     image?: string;
     color?: string;
-    razmer?: number;
-    product?: import("mongoose").Types.ObjectId;
+    razmer?: string;
 }, {}, {}, {}, import("mongoose").Document<unknown, {}, {
+    product?: import("mongoose").Types.ObjectId;
     image?: string;
     color?: string;
-    razmer?: number;
-    product?: import("mongoose").Types.ObjectId;
+    razmer?: string;
 }> & {
+    product?: import("mongoose").Types.ObjectId;
     image?: string;
     color?: string;
-    razmer?: number;
-    product?: import("mongoose").Types.ObjectId;
+    razmer?: string;
 } & {
     _id: import("mongoose").Types.ObjectId;
 }, Schema<any, import("mongoose").Model<any, any, any, any, any, any>, {}, {}, {}, {}, import("mongoose").DefaultSchemaOptions, {
+    product?: import("mongoose").Types.ObjectId;
     image?: string;
     color?: string;
-    razmer?: number;
-    product?: import("mongoose").Types.ObjectId;
+    razmer?: string;
 }, import("mongoose").Document<unknown, {}, {
+    product?: import("mongoose").Types.ObjectId;
     image?: string;
     color?: string;
-    razmer?: number;
-    product?: import("mongoose").Types.ObjectId;
+    razmer?: string;
 }> & {
+    product?: import("mongoose").Types.ObjectId;
     image?: string;
     color?: string;
-    razmer?: number;
-    product?: import("mongoose").Types.ObjectId;
+    razmer?: string;
 } & {
     _id: import("mongoose").Types.ObjectId;
 }>>;

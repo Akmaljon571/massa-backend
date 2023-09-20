@@ -12,18 +12,17 @@ const category_1 = require("../../model/category");
 const product_1 = require("../../model/product");
 let ProductService = class ProductService {
     async findAll(son, page) {
-        const filterPage = (Number(page) - 1) * 10;
-        const filterSon = Number(son) + filterPage;
+        const findPage = (Number(page) - 1) * 10;
+        const findSon = Number(son) + findPage;
         const all = await product_1.default.find();
-        const sonAll = all.slice(filterPage, filterSon);
-        return sonAll;
+        return all.slice(findPage, findSon);
     }
     async findOne(id, son, page) {
-        const filterPage = (Number(page) - 1) * 10;
-        const filterSon = Number(son) + filterPage;
-        const all = await category_1.default.findOne({ _id: id }).populate('product');
-        const sonAll = all.product.slice(filterPage, filterSon);
-        return sonAll;
+        const findPage = (Number(page) - 1) * 10;
+        const findSon = Number(son) + findPage;
+        const category = await category_1.default.findOne({ _id: id }).populate('product');
+        const all = category.product;
+        return all.slice(findPage, findSon);
     }
 };
 exports.ProductService = ProductService;

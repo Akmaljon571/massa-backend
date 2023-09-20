@@ -24,7 +24,7 @@ let ProductController = class ProductController {
         return await this.productService.findAll(son || '10', page || '1');
     }
     findOne(id, son, page) {
-        return this.productService.findOne(id, son, page);
+        return this.productService.findOne(id, son || '10', page || '1');
     }
 };
 exports.ProductController = ProductController;
@@ -32,13 +32,13 @@ __decorate([
     (0, common_1.Get)(),
     (0, swagger_1.ApiQuery)({
         type: String,
-        name: 'son',
-        example: '10',
+        example: 1,
+        name: 'page',
     }),
     (0, swagger_1.ApiQuery)({
         type: String,
-        name: 'page',
-        example: '1',
+        example: 10,
+        name: 'son',
     }),
     __param(0, (0, common_1.Query)('son')),
     __param(1, (0, common_1.Query)('page')),
@@ -50,13 +50,13 @@ __decorate([
     (0, common_1.Get)(':id'),
     (0, swagger_1.ApiQuery)({
         type: String,
-        name: 'son',
-        example: '10',
+        example: 1,
+        name: 'page',
     }),
     (0, swagger_1.ApiQuery)({
         type: String,
-        name: 'page',
-        example: '1',
+        example: 10,
+        name: 'son',
     }),
     __param(0, (0, common_1.Param)('id')),
     __param(1, (0, common_1.Query)('son')),
