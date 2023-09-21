@@ -58,7 +58,15 @@ product {
 
 order {
   findOne() user boyicha
-} 
+  Post
+  Delete
+}  
+
+like {
+  findOne() user boyicha
+  Post
+  Delete
+}
 
 user {
   findOne() tokenga tegishli

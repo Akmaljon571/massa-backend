@@ -1,23 +1,52 @@
-import { Controller, Get, Post, Body, Param, Delete } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Param,
+  Delete,
+  Req,
+} from '@nestjs/common';
 import { OrderService } from './order.service';
 import { CreateOrderDto } from './dto/create-order.dto';
+import { ApiHeader, ApiParam } from '@nestjs/swagger';
+import { Request } from 'express';
+import { Types } from 'mongoose';
 
-@Controller('order')
+@Controller('user/order')
 export class OrderController {
   constructor(private readonly orderService: OrderService) {}
 
   @Post()
-  create(@Body() createOrderDto: CreateOrderDto) {
-    return this.orderService.create(createOrderDto);
+  @ApiHeader({
+    name: 'autharization',
+    required: true,
+  })
+  async create(@Body() createOrderDto: CreateOrderDto, @Req() req: Request) {
+    const _id = req.user_id;
+    return await this.orderService.create(createOrderDto, _id);
   }
 
   @Get()
-  findAll() {
-    return this.orderService.findAll();
+  @ApiHeader({
+    name: 'autharization',
+    required: true,
+  })
+  async findAll(@Req() req: Request) {
+    const _id = req.user_id;
+    return this.orderService.findAll(_id);
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.orderService.remove(+id);
+  @ApiParam({
+    type: String,
+    name: 'id',
+  })
+  @ApiHeader({
+    name: 'autharization',
+    required: true,
+  })
+  async remove(@Param('id') id: Types.ObjectId) {
+    return await this.orderService.remove(id);
   }
 }
