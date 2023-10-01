@@ -10,7 +10,6 @@ exports.ErrorHandle = void 0;
 const common_1 = require("@nestjs/common");
 let ErrorHandle = class ErrorHandle {
     catch(exception, host) {
-        console.log(exception);
         const ctx = host.switchToHttp();
         const response = ctx.getResponse();
         const status = exception === null || exception === void 0 ? void 0 : exception.status;
