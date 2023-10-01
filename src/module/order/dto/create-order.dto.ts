@@ -11,4 +11,13 @@ export class CreateOrderDto {
     example: '650b0a0a7eef3d900cd9ffed',
   })
   pro_id: Types.ObjectId;
+
+  @IsString()
+  @IsNotEmpty()
+  @ApiProperty({
+    title: 'product',
+    type: Types.ObjectId,
+    example: '650b0a0a7eef3d900cd9ffed',
+  })
+  product: Types.ObjectId;
 }

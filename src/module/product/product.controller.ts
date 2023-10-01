@@ -40,4 +40,9 @@ export class ProductController {
   ) {
     return this.productService.findOne(id, son || '10', page || '1');
   }
+
+  @Get(':id')
+  find(@Param('id') id: string) {
+    return this.productService.find(id);
+  }
 }

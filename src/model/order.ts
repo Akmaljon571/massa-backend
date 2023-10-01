@@ -12,5 +12,9 @@ export default model(
       type: Schema.Types.ObjectId,
       ref: 'product',
     },
+    pro: {
+      type: Schema.Types.ObjectId,
+      ref: 'pro',
+    },
   }),
 );

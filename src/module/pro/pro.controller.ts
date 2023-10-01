@@ -12,8 +12,8 @@ export class ProController {
     return this.proService.post();
   }
 
-  @Get('id')
+  @Get(':id')
   async findOne(@Param('id') id: string) {
-    return this.proService.findOne(id);
+    return await this.proService.findOne(id);
   }
 }

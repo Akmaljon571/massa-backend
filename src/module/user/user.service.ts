@@ -32,10 +32,9 @@ export class UserService {
         throw new HttpException('User Already exists', HttpStatus.BAD_REQUEST);
       }
     }
-
     findOne.name = name || findOne.name;
     findOne.password = password || findOne.password;
-    findOne.gender = gender || findOne.gender;
+    findOne.gender = gender ? true : false;
     findOne.age = age || findOne.age;
     await User.findByIdAndUpdate(findOne._id, findOne);
     const newUser = await this.findOne(_id);
